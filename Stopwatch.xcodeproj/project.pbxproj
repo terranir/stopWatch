@@ -14,6 +14,7 @@
 		FF664C6524730BBD00661F4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF664C6424730BBD00661F4B /* Assets.xcassets */; };
 		FF664C6824730BBD00661F4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF664C6624730BBD00661F4B /* LaunchScreen.storyboard */; };
 		FF664C7324730BBD00661F4B /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF664C7224730BBD00661F4B /* StopwatchTests.swift */; };
+		FF664C7E2473111B00661F4B /* LapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF664C7D2473111B00661F4B /* LapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		FF664C6E24730BBD00661F4B /* StopwatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopwatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF664C7224730BBD00661F4B /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
 		FF664C7424730BBD00661F4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF664C7D2473111B00661F4B /* LapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				FF664C6424730BBD00661F4B /* Assets.xcassets */,
 				FF664C6624730BBD00661F4B /* LaunchScreen.storyboard */,
 				FF664C6924730BBD00661F4B /* Info.plist */,
+				FF664C7D2473111B00661F4B /* LapManager.swift */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				FF664C6024730BBB00661F4B /* ViewController.swift in Sources */,
 				FF664C5C24730BBB00661F4B /* AppDelegate.swift in Sources */,
 				FF664C5E24730BBB00661F4B /* SceneDelegate.swift in Sources */,
+				FF664C7E2473111B00661F4B /* LapManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

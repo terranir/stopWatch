@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,88 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stopwatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7qO-h6-s4J">
+                                <rect key="frame" x="26" y="590" width="200" height="248"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="U0I-AO-8zQ"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKF-aY-zye">
+                                <rect key="frame" x="119" y="269" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pRa-ph-vtt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nb-gG-AcS">
+                                <rect key="frame" x="262" y="269" width="30" height="30"/>
+                                <state key="normal" title="Lap"/>
+                                <connections>
+                                    <action selector="lapButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GjM-wT-hTJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f1-v5-XcM">
+                                <rect key="frame" x="73" y="284" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNW-Ux-in4">
+                                <rect key="frame" x="191" y="269" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zFq-qP-Ho4"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0X-nD-0hP">
+                                <rect key="frame" x="138" y="126" width="138" height="138"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOp-VP-jow">
+                                        <rect key="frame" x="48" y="58.5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="cOp-VP-jow" firstAttribute="centerX" secondItem="C0X-nD-0hP" secondAttribute="centerX" id="Ozd-PV-XSW"/>
+                                    <constraint firstItem="cOp-VP-jow" firstAttribute="centerY" secondItem="C0X-nD-0hP" secondAttribute="centerY" id="XgK-ff-789"/>
+                                    <constraint firstAttribute="width" secondItem="C0X-nD-0hP" secondAttribute="height" multiplier="1:1" id="wHe-kB-y4V"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="C0X-nD-0hP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:3" id="0Df-j6-rX6"/>
+                            <constraint firstItem="C0X-nD-0hP" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="22O-Vc-3oT"/>
+                            <constraint firstItem="MNW-Ux-in4" firstAttribute="leading" secondItem="hKF-aY-zye" secondAttribute="trailing" constant="38" id="53Y-Ku-nPv"/>
+                            <constraint firstItem="7qO-h6-s4J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="BAU-YA-fKQ"/>
+                            <constraint firstItem="MNW-Ux-in4" firstAttribute="centerX" secondItem="C0X-nD-0hP" secondAttribute="centerX" id="XTO-Ir-Hwe"/>
+                            <constraint firstItem="2nb-gG-AcS" firstAttribute="leading" secondItem="MNW-Ux-in4" secondAttribute="trailing" constant="39" id="iB2-EB-o7A"/>
+                            <constraint firstItem="7qO-h6-s4J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="546" id="lBU-5J-MPb"/>
+                            <constraint firstItem="2nb-gG-AcS" firstAttribute="centerY" secondItem="MNW-Ux-in4" secondAttribute="centerY" id="lEk-jw-tlQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7qO-h6-s4J" secondAttribute="bottom" constant="24" id="osD-Ks-wkf"/>
+                            <constraint firstItem="hKF-aY-zye" firstAttribute="centerY" secondItem="MNW-Ux-in4" secondAttribute="centerY" id="qgB-Ng-0ts"/>
+                            <constraint firstItem="MNW-Ux-in4" firstAttribute="top" secondItem="C0X-nD-0hP" secondAttribute="bottom" constant="5" id="qwI-Zh-3Ef"/>
+                            <constraint firstItem="C0X-nD-0hP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="yd9-mr-fDK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lapCountTableView" destination="7qO-h6-s4J" id="Jci-Rn-xaA"/>
+                        <outlet property="timeCountBackgroundView" destination="C0X-nD-0hP" id="9mh-kw-I3v"/>
+                        <outlet property="timeCountLabel" destination="cOp-VP-jow" id="cIn-tz-86J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
