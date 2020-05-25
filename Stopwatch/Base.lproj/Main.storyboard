@@ -23,15 +23,21 @@
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKF-aY-zye">
-                                <rect key="frame" x="119" y="269" width="34" height="30"/>
-                                <state key="normal" title="Start"/>
+                                <rect key="frame" x="110" y="269" width="37" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pRa-ph-vtt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nb-gG-AcS">
-                                <rect key="frame" x="262" y="269" width="30" height="30"/>
-                                <state key="normal" title="Lap"/>
+                                <rect key="frame" x="268" y="269" width="30" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Lap">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="lapButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GjM-wT-hTJ"/>
                                 </connections>
@@ -42,19 +48,22 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MNW-Ux-in4">
-                                <rect key="frame" x="191" y="269" width="32" height="30"/>
-                                <state key="normal" title="Stop"/>
+                                <rect key="frame" x="185" y="269" width="44" height="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
-                                    <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zFq-qP-Ho4"/>
+                                    <action selector="resetButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zFq-qP-Ho4"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0X-nD-0hP">
                                 <rect key="frame" x="138" y="126" width="138" height="138"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOp-VP-jow">
-                                        <rect key="frame" x="48" y="58.5" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOp-VP-jow">
+                                        <rect key="frame" x="69" y="69" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -85,6 +94,7 @@
                     </view>
                     <connections>
                         <outlet property="lapCountTableView" destination="7qO-h6-s4J" id="Jci-Rn-xaA"/>
+                        <outlet property="startStopButton" destination="hKF-aY-zye" id="ykx-zZ-bjw"/>
                         <outlet property="timeCountBackgroundView" destination="C0X-nD-0hP" id="9mh-kw-I3v"/>
                         <outlet property="timeCountLabel" destination="cOp-VP-jow" id="cIn-tz-86J"/>
                     </connections>

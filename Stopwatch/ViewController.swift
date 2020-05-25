@@ -8,7 +8,14 @@
 
 import UIKit
 
+enum State {
+    case timerOngoing
+    case timerNotOnging
+    case timerStop
+}
+
 class ViewController: UIViewController {
+    @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var timeCountBackgroundView: UIView!
     @IBOutlet weak var timeCountLabel: UILabel!
     @IBOutlet weak var lapCountTableView: UITableView!
@@ -16,22 +23,42 @@ class ViewController: UIViewController {
 
     private var laps: [Float] = []
 
+    private var state: State = .timerNotOnging
+
     override func viewDidLoad() {
         super.viewDidLoad()
         timeCountBackgroundView.layer.borderWidth = 3
         timeCountBackgroundView.layer.borderColor = UIColor.black.cgColor
         timeCountBackgroundView.layer.cornerRadius = timeCountBackgroundView.frame.width / 2
+        timeCountLabel.text = "00:00:00"
         lapManager.delegate = self
         lapCountTableView.delegate = self
         lapCountTableView.dataSource = self
+
     }
 
-    @IBAction func startButtonTapped(_ sender: Any) {
-        lapManager.startTimer()
+    @IBAction func startButtonTapped(_ sender: UIButton) {
+        switch state {
+        case .timerOngoing:
+            sender.setTitle("Start", for: .normal)
+            lapManager.stopTimer()
+            state = .timerStop
+        case .timerNotOnging:
+            sender.setTitle("Stop", for: .normal)
+            lapManager.startTimer()
+            state = .timerOngoing
+        case .timerStop:
+            sender.setTitle("Stop", for: .normal)
+            lapManager.continueTimer()
+            state = .timerOngoing
+        }
     }
 
-    @IBAction func stopButtonTapped(_ sender: UIButton) {
-        lapManager.stopTimer()
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        timeCountLabel.text = "00:00:00"
+        lapManager.resetTimer()
+        startStopButton.setTitle("start", for: .normal)
+        state = .timerNotOnging
     }
 
     @IBAction func lapButtonTapped(_ sender: Any) {
