@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     @IBAction func resetButtonTapped(_ sender: UIButton) {
         timeCountLabel.text = "00:00:00"
         lapManager.resetTimer()
-        startStopButton.setTitle("start", for: .normal)
+        startStopButton.setTitle("Start", for: .normal)
         state = .timerNotOnging
     }
 
